@@ -16,7 +16,6 @@ refs.lightbox.addEventListener('click', onModalClose);
 refs.lightboxOverlay.addEventListener('click', onModalClose);
 window.addEventListener('keydown', onChangeArrow);
 
-// --- Open ---
 function onModalOpen(e) {
   e.preventDefault();
 
@@ -43,7 +42,6 @@ function setOriginalImage(e) {
   changingSrcAndAlt(originalImageSrc, originalImageAlt);
 }
 
-// --- Close ---
 function onModalClose(e) {
   const isCloseBtn = e.target.classList.contains('lightbox__button');
   const isCloseOverlay = e.target.classList.contains('lightbox__overlay');
@@ -54,7 +52,6 @@ function onModalClose(e) {
     changingSrcAndAlt('', '');
   }
   window.removeEventListener('keydown', onModalClose);
-  // window.removeEventListener('keydown', onChangeArrow); // блокирует нажатие клавиш в модалке более 1 раза
 }
 
 function removeLightboxClass() {
@@ -66,7 +63,6 @@ function changingSrcAndAlt(src, alt) {
   refs.lightboxImage.alt = alt;
 }
 
-// --- Change Image By Arrows---
 function onChangeArrow(e) {
   let currentImage = refs.lightboxImage.src;
   let currentIndex = 0;
